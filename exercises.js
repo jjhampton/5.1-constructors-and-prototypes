@@ -37,10 +37,35 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-// ????????
-// ????????
-// ????????
+function Dog(object) {
+  for (var key in object) {
+    if (object.hasOwnProperty(key)) {
+      this[key] = object[key];
+    }
+  }
+}
 
+Dog.prototype.status = "normal";
+Dog.prototype.hungry = true;
+Dog.prototype.owner = null;
+
+
+function Human(object) {
+  for (var key in object) {
+    if (object.hasOwnProperty(key)) {
+      this[key] = object[key];
+    }
+  }
+  //Methods
+  this.pet = function(dog){
+    dog.status = "happy";
+  };
+  this.feed = function(dog) {
+    dog.hungry = false;
+  };
+}
+
+Human.prototype.cool = false;
 
 //        __
 //   ____/ /___  ____ ______
